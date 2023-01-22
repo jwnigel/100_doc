@@ -7,7 +7,7 @@ current_year = datetime.datetime.now().year
 
 @app.route('/')
 def home():
-    return render_template('index.html', current_year=current_year)
+    return render_template('blog.html', current_year=current_year)
 
 
 if __name__ == '__main__':
