@@ -12,6 +12,10 @@ all_posts = response.json()
 def home():
     return render_template('blog.html', posts=all_posts)
 
+@app.route("/blog/", defaults={ 'num': '1' })
+@app.route('/blog/<num>')
+def blog(num):
+    return render_template('blog.html', posts=all_posts, num=num)
 
 if __name__ == '__main__':
     app.run(debug=True)
